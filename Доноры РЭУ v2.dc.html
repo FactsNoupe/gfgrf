@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Доноры РЭУ — Стань донором, спаси жизнь</title>
+  <link rel="stylesheet" href="_ds/design-system-b9d3fc3e-2df1-4b1a-b0b9-f3b8d3507224/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/design-system-b9d3fc3e-2df1-4b1a-b0b9-f3b8d3507224/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/design-system-b9d3fc3e-2df1-4b1a-b0b9-f3b8d3507224/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/design-system-b9d3fc3e-2df1-4b1a-b0b9-f3b8d3507224/tokens/shadows.css">
+  <link rel="stylesheet" href="_ds/design-system-b9d3fc3e-2df1-4b1a-b0b9-f3b8d3507224/styles.css">
+  <script src="_ds/design-system-b9d3fc3e-2df1-4b1a-b0b9-f3b8d3507224/_ds_bundle.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; padding: 0; background-color: #FBF6F4; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; overflow-x: hidden; }
+    @keyframes floatY { 0% { transform: translateY(0px); } 50% { transform: translateY(-18px); } 100% { transform: translateY(0px); } }
+    @keyframes drift { 0% { transform: translate(0, 0) scale(1); } 50% { transform: translate(40px, -30px) scale(1.08); } 100% { transform: translate(0, 0) scale(1); } }
+    @keyframes marqueeMove { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes pulseDot { 0% { box-shadow: 0 0 0 0 rgba(184, 29, 56, 0.45); } 70% { box-shadow: 0 0 0 12px rgba(184, 29, 56, 0); } 100% { box-shadow: 0 0 0 0 rgba(184, 29, 56, 0); } }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</helmet>
+
+<header style="position: sticky; top: 0; z-index: 300; background-color: rgba(251, 246, 244, 0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid #E4D7D9;" data-screen-label="Шапка">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; gap: 24px;">
+    <a href="#hero" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+      <span style="width: 12px; height: 12px; border-radius: 50% 50% 50% 0; background-color: #B81D38; transform: rotate(-45deg); display: inline-block;"></span>
+      <span style="font-size: 20px; font-weight: 700; color: #2B2126; letter-spacing: -0.02em;">Доноры <span style="color: #B81D38;">РЭУ</span></span>
+    </a>
+    <nav style="display: flex; gap: 28px; align-items: center;">
+      <a href="#about" style="text-decoration: none; color: #2B2126; font-weight: 500; font-size: 14px; transition: color 200ms;" style-hover="color: #B81D38;">О проекте</a>
+      <a href="#stats" style="text-decoration: none; color: #2B2126; font-weight: 500; font-size: 14px; transition: color 200ms;" style-hover="color: #B81D38;">Цифры</a>
+      <a href="#process" style="text-decoration: none; color: #2B2126; font-weight: 500; font-size: 14px; transition: color 200ms;" style-hover="color: #B81D38;">Процесс</a>
+      <a href="#formats" style="text-decoration: none; color: #2B2126; font-weight: 500; font-size: 14px; transition: color 200ms;" style-hover="color: #B81D38;">Форматы</a>
+      <a href="#faq" style="text-decoration: none; color: #2B2126; font-weight: 500; font-size: 14px; transition: color 200ms;" style-hover="color: #B81D38;">FAQ</a>
+      <a href="#register" style="text-decoration: none; background-color: #B81D38; color: #FFFFFF; font-weight: 600; font-size: 14px; padding: 10px 22px; border-radius: 999px; transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 8px rgba(184, 29, 56, 0.25);" style-hover="background-color: #8A1228; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(184, 29, 56, 0.35);">Записаться</a>
+    </nav>
+  </div>
+</header>
+
+<main x-ref="{{ mainRef }}" style="position: relative">
+  <!-- ============ HERO ============ -->
+  <section id="hero" data-screen-label="Главный экран" style="position: relative; overflow: hidden; padding: 88px 24px 96px;">
+    <div style="position: absolute; top: -120px; right: -80px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, #FBE3E6 0%, rgba(251, 227, 230, 0) 70%); animation: drift 14s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: -180px; left: -120px; width: 460px; height: 460px; border-radius: 50%; background: radial-gradient(circle, #ECE4E2 0%, rgba(236, 228, 226, 0) 70%); animation: drift 18s ease-in-out infinite reverse;"></div>
+
+    <div style="position: relative; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center;">
+      <div>
+        <div data-hero="0" style="display: inline-flex; align-items: center; gap: 10px; background-color: #FFFFFF; border: 1px solid #E4D7D9; border-radius: 999px; padding: 8px 18px; margin-bottom: 28px;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background-color: #B81D38; animation: pulseDot 2s infinite;"></span>
+          <span style="font-size: 14px; font-weight: 600; color: #2B2126;">Ближайшая акция — 20 апреля 2027 · корпус РЭУ</span>
+        </div>
+        <h1 data-hero="1" style="font-size: 90px; line-height: 1.02; font-weight: 700; letter-spacing: -0.03em; color: #2B2126; margin: 0 0 24px 0;">
+          Стань донором — <span style="color: #B81D38;">спаси жизнь</span>
+        </h1>
+        <p data-hero="2" style="font-size: 20px; line-height: 1.55; color: #6E5B61; margin: 0 0 36px 0; max-width: 480px; text-wrap: pretty;">Одна донация занимает 10–30 минут и может спасти до трёх жизней. Донорское комьюнити РЭУ — с 2015 года.</p>
+        <div data-hero="3" style="display: flex; gap: 16px; align-items: center;">
+          <a href="#register" style="text-decoration: none; background-color: #B81D38; color: #FFFFFF; font-weight: 600; font-size: 17px; padding: 17px 40px; border-radius: 999px; transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 16px rgba(184, 29, 56, 0.3);" style-hover="background-color: #8A1228; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(184, 29, 56, 0.4);">Записаться на донацию</a>
+          <a href="#process" style="text-decoration: none; color: #2B2126; font-weight: 600; font-size: 17px; padding: 17px 32px; border-radius: 999px; border: 1px solid #C9B7BC; transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); background-color: transparent;" style-hover="border-color: #B81D38; color: #B81D38; background-color: #FFFFFF;">Как это проходит</a>
+        </div>
+        <div data-hero="4" style="display: flex; gap: 12px; align-items: center; margin-top: 44px;">
+          <span style="font-size: 13px; color: #A89BA0; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase;">Партнёры:</span>
+          <span style="font-size: 13px; font-weight: 700; color: #6E5B61; border: 1px solid #E4D7D9; border-radius: 6px; padding: 6px 12px; background-color: #FFFFFF;">НФРЗ</span>
+          <span style="font-size: 13px; font-weight: 700; color: #6E5B61; border: 1px solid #E4D7D9; border-radius: 6px; padding: 6px 12px; background-color: #FFFFFF;">ФМБА</span>
+        </div>
+      </div>
+
+      <div data-hero="2" style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start; justify-content: center; padding: 24px 0;">
+        <div style="background-color: #FFFFFF; border-radius: 16px; padding: 18px 24px; box-shadow: 0 8px 24px rgba(43, 33, 38, 0.16); display: flex; flex-direction: column; gap: 4px; align-self: flex-start;">
+          <span style="font-size: 30px; font-weight: 700; color: #B81D38; letter-spacing: -0.02em;">10 лет</span>
+          <span style="font-size: 13px; color: #6E5B61; font-weight: 500;">спасаем жизни вместе</span>
+        </div>
+        <div style="background-color: #2B2126; color: #FFFFFF; border-radius: 999px; padding: 12px 22px; box-shadow: 0 8px 24px rgba(43, 33, 38, 0.25); font-size: 14px; font-weight: 600; align-self: flex-end;">ты — не один</div>
+      </div>
+    </div>
+  </section><div style="background-color: #B81D38; transform: rotate(-1.2deg); width: 110%; margin: 8px -5% 0; overflow: hidden; padding: 14px 0" aria-hidden="true">
+    <div style="display: flex; gap: 0; white-space: nowrap; animation: marqueeMove 22s linear infinite; width: max-content; position: relative">
+      <span style="color: #FFFFFF; font-size: 18px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">Стань донором&nbsp;&nbsp;✶&nbsp;&nbsp;Спаси жизнь&nbsp;&nbsp;✶&nbsp;&nbsp;Ты — не один&nbsp;&nbsp;✶&nbsp;&nbsp;Доноры РЭУ&nbsp;&nbsp;✶&nbsp;&nbsp;Стань донором&nbsp;&nbsp;✶&nbsp;&nbsp;Спаси жизнь&nbsp;&nbsp;✶&nbsp;&nbsp;Ты — не один&nbsp;&nbsp;✶&nbsp;&nbsp;Доноры РЭУ&nbsp;&nbsp;✶&nbsp;&nbsp;</span>
+      <span style="color: #FFFFFF; font-size: 18px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">Стань донором&nbsp;&nbsp;✶&nbsp;&nbsp;Спаси жизнь&nbsp;&nbsp;✶&nbsp;&nbsp;Ты — не один&nbsp;&nbsp;✶&nbsp;&nbsp;Доноры РЭУ&nbsp;&nbsp;✶&nbsp;&nbsp;Стань донором&nbsp;&nbsp;✶&nbsp;&nbsp;Спаси жизнь&nbsp;&nbsp;✶&nbsp;&nbsp;Ты — не один&nbsp;&nbsp;✶&nbsp;&nbsp;Доноры РЭУ&nbsp;&nbsp;✶&nbsp;&nbsp;</span>
+    </div>
+  <div style="position: absolute; left: -153px; width: 460px; height: 460px; border-radius: 50%; background: radial-gradient(circle, #ECE4E2 0%, rgba(236, 228, 226, 0) 70%); animation: drift 18s ease-in-out infinite reverse; top: 498px"></div></div>
+
+  <!-- ============ MARQUEE ============ -->
+  
+
+  <!-- ============ О ПРОЕКТЕ ============ -->
+  <section id="about" data-screen-label="О проекте" style="padding: 120px 24px 100px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 72px; align-items: start;">
+      <div data-reveal="true">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #B81D38;">О проекте</span>
+        <h2 style="font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; color: #2B2126; margin: 16px 0 0 0; text-wrap: pretty;">Донорское комьюнити РЭУ</h2>
+      </div>
+      <div data-reveal="true" style="display: flex; flex-direction: column; gap: 24px;">
+        <p style="font-size: 20px; line-height: 1.6; color: #2B2126; margin: 0; text-wrap: pretty;">
+          Мы работаем с 2015 года и вместе с партнёрами — НФРЗ и ФМБА — регулярно проводим донорские акции в университете. Наша миссия — популяризировать донорство и сделать первый шаг простым.
+        </p>
+        <blockquote style="margin: 0; padding: 28px 32px; background-color: #FFFFFF; border-radius: 16px; box-shadow: 0 2px 8px rgba(43, 33, 38, 0.08); font-size: 26px; font-weight: 700; color: #B81D38; letter-spacing: -0.01em;">
+          «Доноры РЭУ: ты — не один»
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ЦИФРЫ ============ -->
+  <section id="stats" data-screen-label="Цифры и факты" style="background-color: #2B2126; padding: 100px 24px; border-radius: 40px 40px 0 0;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div data-reveal="true" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 64px; flex-wrap: wrap;">
+        <div>
+          <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #E5707E;">Цифры и факты</span>
+          <h2 style="font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; color: #FFFFFF; margin: 16px 0 0 0;">Проект, который растёт</h2>
+        </div>
+        <p style="font-size: 17px; line-height: 1.55; color: #C9B7BC; margin: 0; max-width: 380px; text-wrap: pretty;">Цель — охватить 40% университета: это 10 000 человек, которые узнают о донорстве.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+        <sc-for list="{{ stats }}" as="stat" hint-placeholder-count="4">
+          <div data-reveal="true" style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 10px; transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);" style-hover="background-color: rgba(255, 255, 255, 0.09); transform: translateY(-4px);">
+            <span data-count="{{ stat.target }}" data-count-suffix="{{ stat.suffix }}" style="font-size: 56px; font-weight: 700; color: #E5707E; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums;">{{ stat.display }}</span>
+            <span style="font-size: 16px; font-weight: 600; color: #FFFFFF;">{{ stat.label }}</span>
+            <span style="font-size: 14px; line-height: 1.5; color: #C9B7BC;">{{ stat.note }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ПРОЦЕСС ============ -->
+  <section id="process" data-screen-label="Как проходит донация" style="background-color: #2B2126; padding: 40px 24px 110px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="background-color: #FBF6F4; border-radius: 32px; padding: 72px 64px;">
+        <div data-reveal="true" style="text-align: center; margin-bottom: 56px;">
+          <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #B81D38;">Как проходит донация</span>
+          <h2 style="font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; color: #2B2126; margin: 16px 0 12px 0;">Быстро. Безопасно. С чаем.</h2>
+          <p style="font-size: 18px; color: #6E5B61; margin: 0;">Пять простых шагов — сама сдача крови занимает всего 10–15 минут.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;">
+          <sc-for list="{{ steps }}" as="step" hint-placeholder-count="5">
+            <div data-reveal="true" style="background-color: #FFFFFF; border-radius: 18px; padding: 28px 22px; display: flex; flex-direction: column; gap: 14px; transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #E4D7D9;" style-hover="transform: translateY(-6px); box-shadow: 0 12px 32px rgba(43, 33, 38, 0.12); border-color: #E5707E;">
+              <span style="font-size: 15px; font-weight: 700; color: #FFFFFF; background-color: #B81D38; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">{{ step.num }}</span>
+              <span style="font-size: 17px; font-weight: 700; color: #2B2126; line-height: 1.3;">{{ step.title }}</span>
+              <span style="font-size: 14px; line-height: 1.5; color: #6E5B61;">{{ step.desc }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ФОРМАТЫ ============ -->
+  <section id="formats" data-screen-label="Форматы участия" style="padding: 110px 24px; background-color: #2B2126; border-radius: 0 0 40px 40px; margin-bottom: -40px; padding-top: 0;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div data-reveal="true" style="margin-bottom: 56px;">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #E5707E;">Форматы участия</span>
+        <h2 style="font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; color: #FFFFFF; margin: 16px 0 0 0; max-width: 560px; text-wrap: pretty;">Кровь — не единственный способ помочь</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+        <sc-for list="{{ formats }}" as="fmt" hint-placeholder-count="4">
+          <a href="#register" data-reveal="true" style="text-decoration: none; background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 40px 36px; display: flex; flex-direction: column; gap: 14px; transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);" style-hover="background-color: #B81D38; border-color: #B81D38; transform: translateY(-4px);">
+            <span style="font-size: 14px; font-weight: 700; color: #E5707E; letter-spacing: 0.08em;">{{ fmt.num }}</span>
+            <span style="font-size: 28px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.01em; line-height: 1.2;">{{ fmt.title }}</span>
+            <span style="font-size: 16px; line-height: 1.55; color: #C9B7BC;">{{ fmt.desc }}</span>
+            <span style="font-size: 15px; font-weight: 600; color: #FFFFFF; margin-top: 8px;">Выбрать роль →</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" data-screen-label="FAQ" style="padding: 150px 24px 110px; background-color: #FBF6F4;">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 72px; align-items: start;">
+      <div data-reveal="true">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #B81D38;">FAQ</span>
+        <h2 style="font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; color: #2B2126; margin: 16px 0 16px 0; text-wrap: pretty;">Боитесь? Это нормально</h2>
+        <p style="font-size: 18px; line-height: 1.6; color: #6E5B61; margin: 0; text-wrap: pretty;">Собрали честные ответы на вопросы, которые задают чаще всего.</p>
+      </div>
+      <div data-reveal="true">
+        <x-import component-from-global-scope="DesignSystem_b9d3fc.Accordion" items="{{ faqItems }}" hint-size="100%,420px"></x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ РЕГИСТРАЦИЯ ============ -->
+  <section id="register" data-screen-label="Регистрация" style="padding: 20px 24px 120px;">
+    <div data-reveal="true" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 0; border-radius: 32px; overflow: hidden; box-shadow: 0 24px 64px rgba(43, 33, 38, 0.16);">
+      <div style="background-color: #B81D38; padding: 64px 52px; display: flex; flex-direction: column; justify-content: space-between; gap: 48px;">
+        <div>
+          <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FBE3E6;">Ближайшая акция</span>
+          <h2 style="font-size: 48px; line-height: 1.08; font-weight: 700; letter-spacing: -0.02em; color: #FFFFFF; margin: 16px 0 0 0;">20 ноября 2027</h2>
+          <p style="font-size: 20px; color: #FBE3E6; margin: 12px 0 0 0; font-weight: 500;">3 корпус РЭУ</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <div style="display: flex; gap: 14px; align-items: baseline;">
+            <span style="font-size: 28px; font-weight: 700; color: #FFFFFF; min-width: 88px; font-variant-numeric: tabular-nums;">10–15</span>
+            <span style="font-size: 15px; color: #FBE3E6;">минут занимает сама донация</span>
+          </div>
+          <div style="height: 1px; background-color: rgba(255, 255, 255, 0.2);"></div>
+          <div style="display: flex; gap: 14px; align-items: baseline;">
+            <span style="font-size: 28px; font-weight: 700; color: #FFFFFF; min-width: 88px;">до 3</span>
+            <span style="font-size: 15px; color: #FBE3E6;">жизней может спасти одна донация</span>
+          </div>
+          <div style="height: 1px; background-color: rgba(255, 255, 255, 0.2);"></div>
+          <div style="display: flex; gap: 14px; align-items: baseline;">
+            <span style="font-size: 28px; font-weight: 700; color: #FFFFFF; min-width: 88px;">100%</span>
+            <span style="font-size: 15px; color: #FBE3E6;">чай и печенье после — гарантированы</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background-color: #FFFFFF; padding: 64px 52px;">
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ handleSubmit }}" style="display: flex; flex-direction: column; gap: 18px;">
+            <h3 style="font-size: 26px; font-weight: 700; color: #2B2126; margin: 0 0 6px 0; letter-spacing: -0.01em;">Запишись на донацию</h3>
+            <div>
+              <label for="reg-name" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; color: #2B2126;">Полное имя *</label>
+              <input id="reg-name" name="fullName" type="text" required="{{ true }}" placeholder="Иван Петров" style="width: 100%; padding: 13px 16px; border: 1px solid #C9B7BC; border-radius: 10px; font-size: 16px; font-family: inherit; box-sizing: border-box; outline: none; transition: all 200ms; background-color: #FFFFFF; color: #2B2126;" style-focus="border-color: #B81D38; box-shadow: 0 0 0 3px rgba(184, 29, 56, 0.12);">
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div>
+                <label for="reg-phone" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; color: #2B2126;">Телефон *</label>
+                <input id="reg-phone" name="phone" type="tel" required="{{ true }}" placeholder="+7 (999) 123-45-67" style="width: 100%; padding: 13px 16px; border: 1px solid #C9B7BC; border-radius: 10px; font-size: 16px; font-family: inherit; box-sizing: border-box; outline: none; transition: all 200ms; background-color: #FFFFFF; color: #2B2126;" style-focus="border-color: #B81D38; box-shadow: 0 0 0 3px rgba(184, 29, 56, 0.12);">
+              </div>
+              <div>
+                <label for="reg-vk" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; color: #2B2126;">Страница ВК</label>
+                <input id="reg-vk" name="vk" type="url" placeholder="vk.com/profile" style="width: 100%; padding: 13px 16px; border: 1px solid #C9B7BC; border-radius: 10px; font-size: 16px; font-family: inherit; box-sizing: border-box; outline: none; transition: all 200ms; background-color: #FFFFFF; color: #2B2126;" style-focus="border-color: #B81D38; box-shadow: 0 0 0 3px rgba(184, 29, 56, 0.12);">
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div>
+                <label for="reg-school" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; color: #2B2126;">Высшая школа</label>
+                <input id="reg-school" name="school" type="text" placeholder="Ваша школа" style="width: 100%; padding: 13px 16px; border: 1px solid #C9B7BC; border-radius: 10px; font-size: 16px; font-family: inherit; box-sizing: border-box; outline: none; transition: all 200ms; background-color: #FFFFFF; color: #2B2126;" style-focus="border-color: #B81D38; box-shadow: 0 0 0 3px rgba(184, 29, 56, 0.12);">
+              </div>
+              <div>
+                <label for="reg-group" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; color: #2B2126;">Номер группы</label>
+                <input id="reg-group" name="group" type="text" placeholder="Б-123" style="width: 100%; padding: 13px 16px; border: 1px solid #C9B7BC; border-radius: 10px; font-size: 16px; font-family: inherit; box-sizing: border-box; outline: none; transition: all 200ms; background-color: #FFFFFF; color: #2B2126;" style-focus="border-color: #B81D38; box-shadow: 0 0 0 3px rgba(184, 29, 56, 0.12);">
+              </div>
+            </div>
+            <label style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #2B2126; cursor: pointer;">
+              <input type="checkbox" name="contra" style="width: 20px; height: 20px; accent-color: #B81D38;">
+              Имеются ли у вас противопоказания?
+            </label>
+            <label style="display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: #2B2126; cursor: pointer;">
+              <input type="checkbox" name="want" required="{{ true }}" style="width: 20px; height: 20px; accent-color: #B81D38;">
+              Хочу сдать кровь! *
+            </label>
+            <button type="submit" style="background-color: #B81D38; color: #FFFFFF; border: none; padding: 16px; font-size: 16px; font-weight: 600; border-radius: 999px; cursor: pointer; transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); margin-top: 6px; font-family: inherit; box-shadow: 0 4px 16px rgba(184, 29, 56, 0.25);" style-hover="background-color: #8A1228; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(184, 29, 56, 0.35);">Отправить заявку</button>
+          </form>
+        </sc-if>
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; height: 100%; text-align: center; padding: 40px 0;">
+            <span style="width: 72px; height: 72px; border-radius: 50%; background-color: #FBE3E6; color: #B81D38; font-size: 34px; font-weight: 700; display: flex; align-items: center; justify-content: center;">✓</span>
+            <h3 style="font-size: 28px; font-weight: 700; color: #2B2126; margin: 0;">Заявка отправлена!</h3>
+            <p style="font-size: 17px; line-height: 1.6; color: #6E5B61; margin: 0; max-width: 340px; text-wrap: pretty;">Спасибо! Мы свяжемся с вами и напомним о дате акции. Ты — не один.</p>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ ФУТЕР ============ -->
+<footer data-screen-label="Футер" style="background-color: #2B2126; padding: 72px 24px 40px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 48px; flex-wrap: wrap; margin-bottom: 56px;">
+      <div style="max-width: 320px;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+          <span style="width: 12px; height: 12px; border-radius: 50% 50% 50% 0; background-color: #E5707E; transform: rotate(-45deg); display: inline-block;"></span>
+          <span style="font-size: 20px; font-weight: 700; color: #FFFFFF;">Доноры РЭУ</span>
+        </div>
+        <p style="font-size: 15px; line-height: 1.6; color: #C9B7BC; margin: 0;">Донорское комьюнити РЭУ. Популяризируем донорство и спасаем жизни с 2015 года.</p>
+      </div>
+      <div style="display: flex; gap: 64px; flex-wrap: wrap;">
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6E5B61;">Соцсети</span>
+          <a href="#" style="text-decoration: none; color: #C9B7BC; font-size: 15px; transition: color 200ms;" style-hover="color: #FFFFFF;">ВКонтакте</a>
+          <a href="#" style="text-decoration: none; color: #C9B7BC; font-size: 15px; transition: color 200ms;" style-hover="color: #FFFFFF;">Telegram</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6E5B61;">Партнёры</span>
+          <a href="#" style="text-decoration: none; color: #C9B7BC; font-size: 15px; transition: color 200ms;" style-hover="color: #FFFFFF;">Сайт НФРЗ</a>
+          <a href="#" style="text-decoration: none; color: #C9B7BC; font-size: 15px; transition: color 200ms;" style-hover="color: #FFFFFF;">Страница ФМБА</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6E5B61;">Навигация</span>
+          <a href="#about" style="text-decoration: none; color: #C9B7BC; font-size: 15px; transition: color 200ms;" style-hover="color: #FFFFFF;">О проекте</a>
+          <a href="#faq" style="text-decoration: none; color: #C9B7BC; font-size: 15px; transition: color 200ms;" style-hover="color: #FFFFFF;">FAQ</a>
+          <a href="#register" style="text-decoration: none; color: #C9B7BC; font-size: 15px; transition: color 200ms;" style-hover="color: #FFFFFF;">Записаться</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+      <span style="font-size: 13px; color: #6E5B61;">© 2026 Доноры РЭУ · Контакты организаторов — в сообществе ВК</span>
+      <span style="font-size: 13px; color: #6E5B61;">Сделано с заботой о жизни</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { submitted: false };
+
+  constructor(props) {
+    super(props);
+    this.mainRef = React.createRef();
+  }
+
+  componentDidMount() {
+    // All animation is progressive enhancement: elements are VISIBLE by default.
+    // We hide them with inline styles only after mount, then reveal with CSS
+    // transitions — if anything fails, content simply stays visible.
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const root = this.mainRef.current;
+    if (!root) return;
+
+    const ease = 'cubic-bezier(0.4, 0, 0.2, 1)';
+
+    // --- Hero entrance (staggered) ---
+    const heroEls = Array.from(root.querySelectorAll('[data-hero]'));
+    heroEls.forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(26px)';
+    });
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        heroEls.forEach((el) => {
+          const i = parseInt(el.getAttribute('data-hero'), 10) || 0;
+          el.style.transition = 'opacity 0.7s ' + ease + ' ' + (i * 0.12) + 's, transform 0.7s ' + ease + ' ' + (i * 0.12) + 's';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        });
+      });
+    });
+    // Safety net: force-visible after animations should have completed.
+    setTimeout(() => {
+      heroEls.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; });
+    }, 1800);
+
+    // --- Scroll reveals ---
+    const revealEls = Array.from(root.querySelectorAll('[data-reveal]'));
+    const vh = window.innerHeight || 800;
+    const toHide = revealEls.filter((el) => el.getBoundingClientRect().top > vh * 0.85);
+    toHide.forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(36px)';
+    });
+    this.revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.style.transition = 'opacity 0.8s ' + ease + ', transform 0.8s ' + ease;
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+          this.revealObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12 });
+    toHide.forEach((el) => this.revealObserver.observe(el));
+
+    // --- Counters ---
+    const countEls = Array.from(root.querySelectorAll('[data-count]'));
+    this.countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.animateCount(entry.target);
+          this.countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    countEls.forEach((el) => this.countObserver.observe(el));
+  }
+
+  componentWillUnmount() {
+    if (this.revealObserver) this.revealObserver.disconnect();
+    if (this.countObserver) this.countObserver.disconnect();
+  }
+
+  fmt(n) {
+    return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0');
+  }
+
+  animateCount(el) {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    const suffix = el.getAttribute('data-count-suffix') || '';
+    if (!target) return;
+    const duration = 1500;
+    const start = performance.now();
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = this.fmt(Math.round(target * eased)) + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  renderVals() {
+    return {
+      mainRef: this.mainRef,
+      stats: [
+        { display: '1\u00A0951', target: 1951, suffix: '', label: 'подписчик в VK', note: 'цель — 2 500 участников сообщества' },
+        { display: '70%', target: 70, suffix: '%', label: 'не знали о проекте', note: 'огромный потенциал для роста' },
+        { display: '71%', target: 71, suffix: '%', label: 'готовы участвовать', note: 'если узнают о донорских акциях' },
+        { display: '10\u00A0000', target: 10000, suffix: '', label: 'человек — цель охвата', note: '40% студентов и сотрудников РЭУ' },
+      ],
+      steps: [
+        { num: '1', title: 'Регистрация онлайн', desc: 'Заполни короткую форму на этой странице' },
+        { num: '2', title: 'Медосмотр', desc: 'Врач проверит, что донация безопасна для тебя' },
+        { num: '3', title: 'Сдача крови', desc: 'Всего 10–15 минут в удобном кресле' },
+        { num: '4', title: 'Отдых', desc: 'Чай, печенье и время восстановиться' },
+        { num: '5', title: 'Справка и подарок', desc: 'Два выходных дня и приятный бонус' },
+      ],
+      formats: [
+        { num: '01', title: 'Стать донором крови', desc: 'Классический формат: приходи на акцию и сдай кровь — это спасает до трёх жизней.' },
+        { num: '02', title: 'Регистр доноров костного мозга', desc: 'Один образец крови — и, возможно, именно ты станешь чьим-то единственным шансом.' },
+        { num: '03', title: 'Стать организатором', desc: 'Помогай проводить акции: координация, навигация, поддержка доноров на площадке.' },
+        { num: '04', title: 'Донорский комитет', desc: 'Вступай в команду проекта: продвижение, партнёрства и развитие комьюнити.' },
+      ],
+      faqItems: [
+        { id: 'tattoo', title: 'Можно ли сдавать кровь с тату?', content: 'Да! Нужно лишь подождать 120 дней после нанесения татуировки или пирсинга — затем донация полностью разрешена.' },
+        { id: 'needle', title: 'Больно ли это?', content: 'Не больнее обычного укола. Лёгкий щипок в первую секунду — дальше большинство доноров спокойно листают ленту или болтают с соседями.' },
+        { id: 'food', title: 'Что есть перед донацией?', content: 'Лёгкий завтрак: каша на воде, хлеб, овощи, сладкий чай. Накануне избегай жирного, жареного и молочного. Голодным приходить нельзя!' },
+        { id: 'often', title: 'Как часто можно сдавать?', content: 'Цельную кровь — до 4–5 раз в год мужчинам и до 4 раз женщинам, с перерывом не менее 60 дней. Организм полностью восстанавливается.' },
+        { id: 'registry', title: 'Зачем вступать в регистр костного мозга?', content: 'Вероятность генетического совпадения — 1 на 10 000. Чем больше людей в регистре, тем выше шанс, что пациент с лейкозом найдёт своего донора.' },
+      ],
+      notSubmitted: !this.state.submitted,
+      submitted: this.state.submitted,
+      handleSubmit: (e) => {
+        e.preventDefault();
+        this.setState({ submitted: true });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

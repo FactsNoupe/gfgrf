@@ -1,0 +1,43 @@
+/* Доноры РЭУ Design System – Color Tokens */
+
+:root {
+  /* Primary Colors – Blood, life, action (warm crimson family) */
+  --color-primary: #B81D38;
+  --color-primary-dark: #8A1228;
+  --color-primary-light: #E5707E;
+  --color-primary-tint: #FBE3E6;
+
+  /* Neutral Colors – warm, editorial */
+  --color-text-primary: #2B2126;
+  --color-text-secondary: #6E5B61;
+  --color-text-tertiary: #C9B7BC;
+  --color-text-disabled: #A89BA0;
+
+  /* Background Colors */
+  --color-bg-primary: #FBF6F4;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #ECE4E2;
+
+  /* Semantic Colors (harmonized, no green) */
+  --color-warning: #D98A2B;
+  --color-error: #B81D38;
+  --color-info: #7A5C8E;
+
+  /* Borders & Dividers */
+  --color-border: #E4D7D9;
+  --color-border-dark: #C9B7BC;
+
+  /* Semantic Aliases */
+  --text-body: var(--color-text-primary);
+  --text-muted: var(--color-text-secondary);
+  --text-label: var(--color-text-tertiary);
+  --surface-default: var(--color-bg-secondary);
+  --surface-alt: var(--color-bg-primary);
+  --surface-raised: var(--color-bg-secondary);
+  --button-primary-bg: var(--color-primary);
+  --button-primary-hover: var(--color-primary-dark);
+  --button-primary-text: var(--color-bg-secondary);
+  --button-secondary-bg: var(--color-bg-tertiary);
+  --button-secondary-text: var(--color-text-primary);
+  --focus-ring: var(--color-primary);
+}

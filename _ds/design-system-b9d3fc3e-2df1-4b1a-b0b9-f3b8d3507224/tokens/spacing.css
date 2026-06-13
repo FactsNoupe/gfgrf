@@ -1,0 +1,37 @@
+/* Доноры РЭУ Design System – Spacing Tokens */
+
+:root {
+  /* Base Unit: 8px – @kind spacing */
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  /* Common Combinations – @kind spacing */
+  --padding-button: var(--spacing-s) var(--spacing-m);
+  --padding-card: var(--spacing-l);
+  --padding-section: var(--spacing-2xl) var(--spacing-m);
+  --gap-small: var(--spacing-s);
+  --gap-medium: var(--spacing-m);
+  --gap-large: var(--spacing-l);
+  --gap-section: var(--spacing-2xl);
+
+  /* Border Radius – @kind radius */
+  --radius-small: 4px;
+  --radius-standard: 8px;
+  --radius-large: 12px;
+  --radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-primary);
+}

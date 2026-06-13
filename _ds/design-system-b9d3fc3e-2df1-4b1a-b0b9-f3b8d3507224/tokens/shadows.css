@@ -1,0 +1,27 @@
+/* Доноры РЭУ Design System – Shadow & Transition Tokens */
+
+:root {
+  /* Shadows for Elevation – @kind shadow */
+  --shadow-xs: 0 1px 2px rgba(29, 53, 87, 0.05);
+  --shadow-sm: 0 2px 4px rgba(29, 53, 87, 0.08);
+  --shadow-base: 0 2px 8px rgba(29, 53, 87, 0.12);
+  --shadow-md: 0 4px 12px rgba(29, 53, 87, 0.14);
+  --shadow-lg: 0 8px 24px rgba(29, 53, 87, 0.16);
+  --shadow-xl: 0 12px 32px rgba(29, 53, 87, 0.18);
+
+  /* Focus & Interactive – @kind shadow */
+  --shadow-focus: 0 0 0 2px var(--color-bg-secondary), 0 0 0 4px var(--color-primary);
+  
+  /* Transitions – @kind other */
+  --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --transition-standard: 300ms cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --z-base: 0; /* @kind other */
+  --z-dropdown: 100; /* @kind other */
+  --z-sticky: 200; /* @kind other */
+  --z-fixed: 300; /* @kind other */
+  --z-modal-backdrop: 400; /* @kind other */
+  --z-modal: 500; /* @kind other */
+  --z-tooltip: 600; /* @kind other */
+  --z-notification: 700; /* @kind other */
+}
