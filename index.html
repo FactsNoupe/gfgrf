@@ -25,6 +25,50 @@
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
     }
+
+    /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+    @media (max-width: 768px) {
+      /* Навигация — скрыть ссылки, оставить только кнопку */
+      nav a:not([href="#register"]) { display: none !important; }
+      nav { gap: 0 !important; }
+
+      /* Hero — одна колонка */
+      #hero > div > div[style*="grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+      /* Заголовок H1 */
+      h1 { font-size: 42px !important; }
+      h2 { font-size: 28px !important; }
+
+      /* Все grid-секции — в одну колонку */
+      div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+
+      /* Карточки со статистикой — 2 в ряд */
+      div[style*="grid-template-columns: repeat(4"] {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      /* Паддинги секций */
+      section { padding: 60px 16px !important; }
+
+      /* Кнопки — стек */
+      div[style*="display: flex"][style*="gap: 16px"] {
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+      div[style*="display: flex"][style*="gap: 16px"] a {
+        text-align: center !important;
+      }
+
+      /* Предотвратить горизонтальный скролл */
+      body { overflow-x: hidden !important; }
+      * { max-width: 100% !important; }
+      div[style*="width: 110%"] { width: 100% !important; margin: 8px 0 0 !important; }
+    }
   </style>
 </helmet>
 
